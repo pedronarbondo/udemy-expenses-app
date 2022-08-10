@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { nanoid } from "nanoid";
+import React from "react"
+import Main from "./components/Main"
+
+const DUMMY_EXPENSES = [
+  {
+    id: nanoid(),
+    title: "Ferry",
+    amount: "65,33",
+    date: new Date(2022, 8, 1)
+  },
+  {
+    id: nanoid(),
+    title: "Hotel",
+    amount: "33,45",
+    date: new Date(2022, 8, 3)
+  },
+  {
+    id: nanoid(),
+    title: "Suplements",
+    amount: "50,17",
+    date: new Date(2022, 8, 5)
+  },
+
+]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  const [expenses, setExpenses] = React.useState(DUMMY_EXPENSES)
+
+  function newExpense(expenseData) {
+    const newExpense = expenseData
+    setExpenses(prevExpenses => {
+      return [
+        newExpense,
+        ...prevExpenses
+      ]
+    })
+  }
+
+  return <Main expenses={expenses} className="main" />
 }
 
 export default App;
