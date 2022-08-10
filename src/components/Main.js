@@ -4,7 +4,7 @@ import ExpenseForm from "./ExpenseForm"
 
 export default function Main(props) {
 
-    const { expenses } = props
+    const { expenses, handleNewExpense } = props
 
     const mappedExpenses =
         expenses.map(expense => {
@@ -21,7 +21,7 @@ export default function Main(props) {
     return (
         <div className="main">
             <div className="form--div">
-                <ExpenseForm />                
+                <ExpenseForm handleNewExpense={handleNewExpense}/>                
             </div>
             <div className="expenseContainer">
                 {mappedExpenses}

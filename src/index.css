@@ -27,7 +27,8 @@ body {
   justify-content: center;
   border: 1px solid white;
   border-radius: 6px;
-  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
   line-height: 0.6rem;
   background-color: rgb(14, 14, 14);
   opacity: 0.8;
@@ -51,6 +52,7 @@ body {
   padding: 0px 20px;
   border-radius: 12px;
   background-color: rgb(75, 2, 75);
+  width: 90px;
 }
 
 .date--month,

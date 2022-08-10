@@ -38,7 +38,10 @@ function App() {
     })
   }
 
-  return <Main expenses={expenses}/>
+  return <Main 
+    expenses={expenses}
+    handleNewExpense={newExpense}
+    />
 }
 
 export default App;
