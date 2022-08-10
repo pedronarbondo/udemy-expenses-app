@@ -38,7 +38,7 @@ function App() {
     })
   }
 
-  return <Main expenses={expenses} className="main" />
+  return <Main expenses={expenses}/>
 }
 
 export default App;

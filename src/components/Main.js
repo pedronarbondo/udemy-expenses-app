@@ -1,5 +1,6 @@
 import React from "react"
 import Expense from "./Expense"
+import ExpenseForm from "./ExpenseForm"
 
 export default function Main(props) {
 
@@ -18,8 +19,13 @@ export default function Main(props) {
         })
 
     return (
-        <div className="expenseContainer">
-            {mappedExpenses}
+        <div className="main">
+            <div className="form--div">
+                <ExpenseForm />                
+            </div>
+            <div className="expenseContainer">
+                {mappedExpenses}
+            </div>
         </div>
     )
 
